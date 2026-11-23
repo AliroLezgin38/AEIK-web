@@ -71,12 +71,12 @@ export default function KabinetHeader({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
         {/* Left: Brand & Title */}
         <div className="flex items-center gap-4">
-          <Link href="/" className="relative w-36 h-9 block">
+          <Link href="/" className="relative w-40 sm:w-48 h-10 block shrink-0">
             <Image
               src="/assets/logo-primary-trim.png"
               alt="AEİK"
               fill
-              sizes="144px"
+              sizes="(min-width: 640px) 192px, 160px"
               className="object-contain object-left"
               priority
             />

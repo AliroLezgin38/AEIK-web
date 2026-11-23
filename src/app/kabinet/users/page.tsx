@@ -326,12 +326,12 @@ export default function UserManagementPage() {
               <span>Kabinetə Qayıt</span>
             </Link>
             <div className="h-6 w-px bg-slate-200" />
-            <div className="relative w-36 h-9">
+            <div className="relative w-40 h-10 shrink-0">
               <Image
                 src="/assets/logo-primary-trim.png"
                 alt="AEİK"
                 fill
-                sizes="144px"
+                sizes="160px"
                 className="object-contain object-left"
                 priority
               />
