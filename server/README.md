@@ -45,7 +45,7 @@ Baza: `/api/v1` (lokal serverdə `/v1` da işləyir).
 | Metod | Yol | İcazə |
 |---|---|---|
 | GET | `/health` | açıq |
-| POST | `/auth/register` | açıq |
+| POST | `/auth/register` | owner/admin (açıq qeydiyyat bağlıdır) |
 | POST | `/auth/login` | açıq |
 | GET | `/auth/me` | token |
 | GET/POST | `/users`, PATCH/DELETE `/users/:id` | admin/owner |

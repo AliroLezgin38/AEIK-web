@@ -53,11 +53,12 @@ export default function LoginPage() {
 
         {/* Logo */}
         <div className="flex flex-col items-center mb-8">
-          <Link href="/" className="relative w-48 h-12 mb-3">
+          <Link href="/" className="relative block w-36 h-9 mb-3">
             <Image
-              src="/assets/logo-primary.png"
+              src="/assets/logo-primary-trim.png"
               alt="AEİK"
               fill
+              sizes="144px"
               className="object-contain"
               priority
             />
@@ -123,12 +124,9 @@ export default function LoginPage() {
           </button>
         </form>
 
-        {/* Register Link */}
-        <div className="mt-8 text-center text-xs text-slate-600">
-          Hesabınız yoxdur?{" "}
-          <Link href="/register" className="text-brand-600 font-bold hover:underline">
-            Qeydiyyatdan keçin
-          </Link>
+        {/* Hesab yaratmaq yalnız admin tərəfindən edilir */}
+        <div className="mt-8 text-center text-xs text-slate-500">
+          Hesabınız yoxdur? Yeni hesab yalnız təşkilat admini tərəfindən yaradılır.
         </div>
       </div>
     </div>

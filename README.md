@@ -19,7 +19,6 @@ Vercel-də hər ikisi **tək layihə** kimi yayımlanır: Next.js səhifələri 
 |---|---|
 | `/` | Əsas landing səhifəsi (proqram, istiqamətlər, statistika, əlaqə) |
 | `/login` | Email və şifrə ilə giriş |
-| `/register` | Yeni istifadəçi qeydiyyatı |
 | `/kabinet` | İdarə heyəti kabineti (10 modul) |
 | `/kabinet/users` | İstifadəçi və rol idarəetməsi (owner/admin) |
 
@@ -29,7 +28,7 @@ Hesabatlar, davamiyyət, layihələr, təqvim, post planı, əməkdaşlıq, nət
 
 ### Rollar
 
-- **owner / admin** — məlumat əlavə etmək, redaktə etmək, silmək, istifadəçiləri idarə etmək.
+- **owner / admin** — məlumat əlavə etmək, redaktə etmək, silmək, istifadəçiləri idarə etmək. Yeni hesablar **yalnız** bu rollar tərəfindən `/kabinet/users` səhifəsindən yaradılır; açıq qeydiyyat (self-register) bağlıdır.
 - **member** — kabinet məlumatlarını oxumaq.
 
 ---
@@ -116,7 +115,7 @@ Baza yol: `/api/v1` (lokal serverdə `/v1` da işləyir). Autentifikasiya: `Auth
 | Metod | Yol | İcazə |
 |---|---|---|
 | GET | `/health` | açıq |
-| POST | `/auth/register` | açıq |
+| POST | `/auth/register` | owner/admin |
 | POST | `/auth/login` | açıq |
 | GET | `/auth/me` | token |
 | GET/POST | `/users`, PATCH/DELETE `/users/:id` | owner/admin |

@@ -3,14 +3,16 @@
 const express = require('express');
 const { ObjectId } = require('mongodb');
 const { getDb, sendDbUnavailable } = require('../db');
-const { hashPassword, publicUser, requireAuth, signToken, verifyPassword } = require('../auth');
+const { hashPassword, publicUser, requireAuth, requireRole, signToken, verifyPassword } = require('../auth');
 const { ApiError, isEmail, isNonEmptyString, wrap } = require('../utils');
 
 const router = express.Router();
 
-// POST /api/v1/auth/register
+// POST /api/v1/auth/register — yalnız owner/admin yeni istifadəçi yarada bilər.
 router.post(
   '/register',
+  requireAuth,
+  requireRole('owner', 'admin'),
   wrap(async (req, res) => {
     const { email, password, displayName, department } = req.body || {};
 
